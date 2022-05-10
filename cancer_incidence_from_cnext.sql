@@ -4,6 +4,7 @@ select
 	,RTRIM(F00006) as mrn
     ,F00022 as sex -- 1 male, 2 fem.
     ,F00021 as race -- codes
+	,F00138 as Ethnicity -- Spanish codes
 	,f00029 as tumorDateDx
 	,RTRIM(f00089) as primsite
 	,f00152 as siteICD_0_3
@@ -21,7 +22,6 @@ where
   and f01076<=4
   and f01350 like '%UNM%' --UNMCC','UNM, Albuquerque, NM','UNMH; Albuquerque, NM','UNM~~','UNMH','UNMH Albuquerque, NM (0006850037)'
   OR f01350 like '%University of New Mexico%' --'0006850037 University of New Mexico Hospital','University of New Mexico','University of New Mexico Hosp in Albuq, NM',,'University of New Mexico Hosp in Albuq, NM','
-  
 order by siteICD_0_3,mrn
    ------- example counts;  for 2018
   --LIP <150:        108 (105)
